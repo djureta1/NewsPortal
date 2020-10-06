@@ -37,7 +37,7 @@ public class UserService {
     public LoginResponse login(UserLoginDTO userLoginDTO) {
         User user=userRepository.findByUsername(userLoginDTO.getUsername());
 
-        if(user.getPassword()==userLoginDTO.getPassword()){
+        if(user.getPassword().equals(userLoginDTO.getPassword())){
             return new LoginResponse(true,"Loged in");
         }
         return new LoginResponse(false,"Login failed.");
