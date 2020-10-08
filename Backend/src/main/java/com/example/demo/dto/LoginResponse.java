@@ -9,9 +9,20 @@ public class LoginResponse {
     @NotNull
     private String message;
 
-    public LoginResponse(Boolean success, String message) {
+    private Integer userId;
+
+    public LoginResponse(Boolean success, String message, Integer userId) {
         this.success = success;
         this.message = message;
+        this.userId = userId;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Boolean getSuccess() {

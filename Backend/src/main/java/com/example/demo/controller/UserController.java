@@ -4,6 +4,7 @@ import com.example.demo.dto.LoginResponse;
 import com.example.demo.dto.RoleDTO;
 import com.example.demo.dto.UserDTO;
 import com.example.demo.dto.UserLoginDTO;
+import com.example.demo.model.News;
 import com.example.demo.model.Role;
 import com.example.demo.model.User;
 import com.example.demo.service.UserService;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 public class UserController {
 
     @Autowired
@@ -38,6 +40,11 @@ public class UserController {
     @GetMapping("/user/all")
     List<User> allUsers() throws Exception {
         return userService.getAllUsers();
+    }
+
+    @GetMapping("/user/{id}/news")
+    List<News> newsByUser(@PathVariable Integer id) throws Exception{
+        return userService.newsByUser(id);
     }
 
 }

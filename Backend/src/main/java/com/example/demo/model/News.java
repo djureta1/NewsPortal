@@ -3,6 +3,7 @@ package com.example.demo.model;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -18,6 +19,7 @@ public class News {
     private String caption;
 
     @NotNull
+    @Size(min = 0, max = 10000)
     private String text;
 
     @ManyToOne

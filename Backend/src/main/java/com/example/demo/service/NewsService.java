@@ -8,6 +8,7 @@ import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,14 +24,13 @@ public class NewsService {
         if(newsRepository.count()==0) {
             throw new Exception("The base is empty.");
         }
-        List<News> allNews=new ArrayList<>();
-        newsRepository.findAll().forEach(allNews::add);
-        return allNews;
+        return (List<News>) newsRepository.findAll();
+
     }
 
     public News addNews(NewsDTO newsDTO){
         User user=userRepository.findById(newsDTO.getUserId()).get();
-        News news=new News(newsDTO.getCaption(),newsDTO.getText(),user,newsDTO.getDate());
+        News news=new News(newsDTO.getCaption(),newsDTO.getText(),user, LocalDate.now());
         return newsRepository.save(news);
     }
 

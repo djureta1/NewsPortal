@@ -1,0 +1,76 @@
+body{
+  background-color: #d5d8db;
+}
+
+.btn{
+  width: 4em;
+  height: 2em;
+  margin-top: 2em;
+}
+
+.header{
+  display: flex;
+}
+
+.header h1{
+  width: 90%;
+  text-align: left;
+}
+
+.allnews{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  width: 60%;
+}
+
+.news{
+  border: 3px solid #4d90cf;
+  box-shadow: 3px 3px 0 0 rgba(62, 59, 224, 0.31);
+  margin-bottom: 2em;
+  background-color: white;
+}
+
+.news p{
+  text-align: justify;
+  padding: 2em;
+}
+
+.loginMain{
+  display: flex;
+  justify-content: center;
+  margin-top: 5em;
+}
+
+
+.login label{
+  text-align: left;
+}
+.login{
+  border: 3px solid #4d90cf;
+  box-shadow: 3px 3px 0 0 rgba(62, 59, 224, 0.31);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding: 3em;
+}
+
+table {
+  background-color: white;
+  border-collapse: collapse;
+  margin-left: 3em;
+}
+
+table, th, td {
+  width: 60%;
+  padding: 1em;
+  border: 1px solid black;
+}
+
+.button{
+  display: flex;
+  margin-top: 2em;
+  margin-left: 3em;
+}

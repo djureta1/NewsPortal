@@ -11,6 +11,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 public class NewsController {
 
     @Autowired
